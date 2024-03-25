@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #111111;
+  --foreground: #f8f8f2;
+  --white: #f8f8f2;
+  --red: #ff5555;
+  --green: #50fa7b;
+  --pink: #ff79c6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+
+  overflow: hidden;
+}
+
+html {
+  overflow: hidden;
+  background-size: 16px 16px;
+  background-color: var(--background);
+  background-image: radial-gradient(
+    rgba(123, 123, 123, 0.06) 2px,
+    transparent 2px
+  );
+}
+
+body, canvas {
+  overflow: hidden;
+}
+
+nav.dock {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 2em;
+  margin: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #222222;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  user-select: none;
+  z-index: 2;
+}
+
+@media screen and (max-width: 460px) {
+  nav.dock {
+    bottom: 1em;
+  }
+}
+
+nav.dock button {
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 1.7em;
+  position: relative;
+  margin: 0.4em;
+  cursor: pointer;
+  color: var(--foreground);
+  opacity: .6;
+  background-color: transparent;
+  border: none;
+  border-radius: .5rem;
+  transition: all .05s linear;
+  position: relative;
+}
+
+@media screen and (max-width: 460px) {
+  nav.dock button {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+nav.dock button:hover, nav.dock button:has(input[type='radio']:checked) {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+nav.dock button input[type='radio'] {
+  all: unset;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+nav.dock button input#white + svg {
+  fill: var(--white);
+}
+
+nav.dock button input#red + svg {
+  fill: var(--red);
+}
+
+nav.dock button input#green + svg {
+  fill: var(--green);
+}
+
+nav.dock button input#pink + svg {
+  fill: var(--pink);
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Just Draw</title>
+    <meta name="author" content="ohenrydev" />
+    <meta name="description" content="Minimalist drawing app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111111" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+  </head>
+  <body>
+    <canvas></canvas>
+    <nav class="dock">
+      <button id="undo">
+        <i data-lucide="undo-2"></i>
+      </button>
+      <button id="pencil-select">
+        <input type="radio" name="tool" value="pencil" id="pencil" checked/>
+        <i data-lucide="pencil-line"></i>
+      </button>
+      <button id=white-select>
+        <input type="radio" name="color" value="#f8f8f2" id="white" checked/>
+        <i data-lucide="circle"></i>
+      </button>
+      <button id="red-select">
+        <input type="radio" name="color" value="#ff5555" id="red" />
+        <i data-lucide="circle"></i>
+      </button>
+      <button id="green-select">
+        <input type="radio" name="color" value="#50fa7b" id="green" />
+        <i data-lucide="circle"></i>
+      </button>
+      <!-- <button>
+        <input type="radio" name="color" value="#ff79c6" id="pink" />
+        <i data-lucide="circle"></i>
+      </button> -->
+      <button id="clear">
+        <i data-lucide="X"></i>
+      </button>
+      <button id="eraser-select">
+        <input type="radio" name="tool" value="eraser" id="eraser" />
+        <i data-lucide="eraser"></i>
+      </button>
+      <button id="download"><i data-lucide="hard-drive-download"></i></button>
+    </nav>
+    <script type="module" src="/src/main.ts"></script>
+    <script defer>
+      "serviceWorker" in navigator && navigator.serviceWorker.register("sw.js")
+        .then(function() { console.log("Service Worker Registered") })
+    </script>
+  </body>
+</html>
